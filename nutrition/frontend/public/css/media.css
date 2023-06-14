@@ -1,0 +1,169 @@
+@media (max-width: 500px) {
+    .products {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .nav {
+        flex-direction: unset;
+        justify-content: center;
+        height: unset;
+    }
+
+    .tab-content {
+        height: 900px;
+    }
+
+    .tab-content {
+        box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .pincode {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .banner-txt {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .protin {
+        width: 290px;
+        margin: auto;
+        display: flex;
+    }
+
+    .about-img {
+        width: 330px;
+        margin-bottom: 20px;
+    }
+
+    .main-slider {
+        text-align: center;
+    }
+
+    .photos {
+        text-align: center;
+    }
+
+    .footer2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer3 {
+        padding-bottom: 40px;
+    }
+
+    .banner .row {
+        margin: 0;
+    }
+
+    .slide {
+        margin-right: 0;
+    }
+
+    .social1 {
+        margin-bottom: 30px;
+    }
+
+    .banner-btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cart .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .products-row2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .products-row2 h5 {
+        text-align: center;
+    }
+
+    .total {
+        margin-bottom: 30px;
+    }
+
+    .login-img img {
+        width: 350px;
+        margin-top: 20px;
+    }
+
+    .change-password-btns {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .footer3 h5 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .categories select {
+        width: 90%;
+    }
+
+    .product-detail1 h2 {
+        text-align: center;
+    }
+
+    .price {
+        justify-content: center;
+    }
+
+    .product-detail1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description h4 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .product-img {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 7px;
+    }
+    
+    .buttons button {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .btn5 {
+        padding: 6px 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    
+    .navbar-nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .banner-txt {
+        margin-bottom: 40px;
+    }
+}

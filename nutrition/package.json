@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "universal-cookie": "^4.0.4"
+  }
+}
