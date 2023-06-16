@@ -26,6 +26,7 @@ function Cart() {
         window.location.pathname = "/login"
     }
 
+
     return (
         <>
             <div className="cart">
@@ -48,7 +49,7 @@ function Cart() {
                                                     <div className="cart-p-detail">
                                                         <div className="d-flex gap-3 align-items-center">
                                                             <h6>Qty.</h6>
-                                                            {/* <select
+                                                            <select
                                                                 onChange={(e) =>
                                                                     dispatch({
                                                                         type: "CHANGE_CART_QTY",
@@ -67,7 +68,19 @@ function Cart() {
                                                                 <option value="7">7</option>
                                                                 <option value="8">8</option>
                                                                 <option value="9">9</option>
-                                                            </select> */}
+                                                            </select>
+                                                       
+                                                            {/* <div className="quntity">
+                                                                <input type="number" placeholder="1" onChange={(e) =>
+                                                                    dispatch({
+                                                                        type: "CHANGE_CART_QTY",
+                                                                        payload: {
+                                                                            id: product.id,
+                                                                            qty: e.target.value,
+                                                                        },
+                                                                    })
+                                                                }></input>
+                                                            </div> */}
                                                         </div>
                                                         <h5>INR {product.discountedprice}</h5>
                                                         <img src="Img/delete.png" className="delete-img" id="remove" alt="delete img" onClick={() =>

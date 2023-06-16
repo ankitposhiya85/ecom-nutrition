@@ -35,11 +35,13 @@ function Productdetail() {
 
     function checkPincode() {
         var res = document.getElementById("res");
+        var delivery = document.getElementById("delivery")
 
         if (pincode.includes(parseInt(zipcode))) {
             res.textContent = "Available";
             res.classList.add("available");
             res.classList.remove("not-available");
+            delivery.style.display = "block";
         } else if (zipcode.trim().length === 0) {
             res.textContent = "Please enter the Pincode";
             res.classList.add("not-available");
@@ -62,7 +64,7 @@ function Productdetail() {
             dispatch({
                 type: "ADD_TO_CART",
                 payload: product,
-            })
+            });
             alert("Product added to cart");
         } else if (zipcode.trim().length !== 6) {
             alert("Pincode must be of six digits");
@@ -104,7 +106,7 @@ function Productdetail() {
                             <div className="buttons">
                                 {cart.some((p) => p.id === product.id) ? (
                                     <button
-                                        className="btn1"
+                                        className="btn2"
                                         onClick={() =>
                                             dispatch({
                                                 type: "REMOVE_FROM_CART",
@@ -133,7 +135,7 @@ function Productdetail() {
                                     </Link>
                                 ) : (
                                     <button
-                                        className="btn1"
+                                        className="btn2"
                                         onClick={buynow}
                                     >
                                         Buy Now
@@ -150,7 +152,9 @@ function Productdetail() {
                                 <input type="text" placeholder="pincode" id="pincode" onChange={handlechange}></input>
                                 <button onClick={checkPincode}>Check</button>
                             </div>
-                            <div id="res"></div>
+                            <div className="d-flex gap-5">
+                                <span id="res"></span><span id="delivery">Deliverd in {product.deliverydays}</span>
+                            </div>
                             <div className="social2">
                                 <h3>Share :</h3>
                                 <img src="/Img/whatsapp.png"></img>

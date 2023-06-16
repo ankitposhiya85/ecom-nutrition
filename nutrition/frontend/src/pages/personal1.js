@@ -60,6 +60,14 @@ function Personal1() {
                                         <img src="Img/arrow.png" className="arrow"></img>
                                     </div></Link>
                                     <hr></hr>
+                                    <Link to="/admin"><div className="menu1">
+                                        <div className="d-flex gap-3">
+                                            <img src="Img/admin.png" className="menu-img"></img>
+                                            <p>Admin</p>
+                                        </div>
+                                        <img src="Img/arrow.png" className="arrow"></img>
+                                    </div></Link>
+                                    <hr></hr>
                                 </div>
                             </div>
                         </div>

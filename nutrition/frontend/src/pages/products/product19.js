@@ -13,7 +13,7 @@ function Product19() {
     const [zipcode, setZipcode] = useState("");
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    
+
 
     useEffect(() => {
         const selectedProduct = productsData.find(p => p.id === parseInt(id));
@@ -28,7 +28,7 @@ function Product19() {
     const handlechange = event => {
         setZipcode(event.target.value);
     }
-    
+
     const {
         state: { cart },
         dispatch,
@@ -57,9 +57,9 @@ function Product19() {
     }
 
     function addtocart() {
-        if (zipcode.trim().length === 0){
+        if (zipcode.trim().length === 0) {
             alert("Plese enter the pincode");
-        } else if (pincode.includes(parseInt(zipcode))) { 
+        } else if (pincode.includes(parseInt(zipcode))) {
             dispatch({
                 type: "ADD_TO_CART",
                 payload: product,
@@ -70,7 +70,14 @@ function Product19() {
         } else {
             alert("Pincode not Serviceble")
         }
-        
+
+    }
+
+    function buynow() {
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product,
+        })
     }
     return (
         <>
@@ -100,8 +107,44 @@ function Product19() {
                                 <p>INR 2,799</p>
                             </div>
                             <div className="buttons">
-                                {/* <Link to="/contact"><button className="btn2">Add to cart</button></Link> */}
-                                <button className="btn1" id="cart-btn" onClick={addtocart}>Add to cart</button>
+                                {cart.some((p) => p.id === product.id) ? (
+                                    <button
+                                        className="btn1"
+                                        onClick={() =>
+                                            dispatch({
+                                                type: "REMOVE_FROM_CART",
+                                                payload: product,
+                                            })
+                                        }
+                                    >
+                                        Remove from Cart
+                                    </button>
+                                ) : (
+                                    <button
+                                        className="btn1"
+                                        onClick={addtocart}
+                                    >
+                                        Add to cart
+                                    </button>
+                                )}
+                                {cart.some((p) => p.id === product.id) ? (
+
+                                    <Link to="/cart">
+                                        <button
+                                            className="btn1"
+                                        >
+                                            Go to Cart
+                                        </button>
+                                    </Link>
+                                ) : (
+                                    <button
+                                        className="btn1"
+                                        onClick={buynow}
+                                    >
+                                        Buy Now
+                                    </button>
+                                )
+                                }
                             </div>
                             <div className="stock">
                                 <h6>In Stock</h6>

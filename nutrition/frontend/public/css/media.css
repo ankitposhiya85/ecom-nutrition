@@ -150,6 +150,11 @@
     .btn5 {
         padding: 6px 50px;
     }
+
+    .cart-p-detail {
+        flex-direction: column;
+        gap: 25px;
+    }
 }
 
 @media (max-width: 1000px) {

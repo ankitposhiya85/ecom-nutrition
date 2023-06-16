@@ -8,7 +8,7 @@ export default function ProtectedRoutes({ component: Component, ...rest }) {
   return (
 
     // this route takes other route assigned to it from the App.js and return the same route if condition is met
-    <Route
+    <Navigate
       {...rest}
       render={(props) => {
         // get cookie from browser if logged in

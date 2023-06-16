@@ -173,8 +173,8 @@
                     <Link to="/contact"><button className="btn2">Add to Cart</button></Link>
                 </div>
                 <div className="slide col-lg-4 col-12">
-                    <Link to="/product7"><div className="slide-img">
-                        <img src="Img/product 12.jpg"></img>
+                    <Link to="/product7"><div className="slide-img"> 
+                        <img src="Img/product 12.jpg"></img>        
                     </div>
                         <h5>TRUEBASICS MULTIVIT SPORT ONE DAILY VITAMINS MINERALS AMINO ACIDS WITH JOINT & ENERGY BLENDS</h5></Link>
                     <div className="d-flex align-items-center justify-content-center gap-5">

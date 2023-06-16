@@ -11,6 +11,8 @@ function Login() {
         document.getElementById("footer").classList.add("login-footer");
     },[]);
 
+    const token = cookies.get("TOKEN");
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState(false);
@@ -28,8 +30,6 @@ function Login() {
                 password,
             },
         };
-
-
 
         // make the API call
         axios(configuration)

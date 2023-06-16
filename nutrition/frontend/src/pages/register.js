@@ -10,12 +10,14 @@ function Register() {
     }
     );
 
+    // initial state
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [mobile, setMobile] = useState("");
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [register, setRegister] = useState(false);
+    const mobileCheck = document.getElementById("valid-mobile");
 
     const handleSubmit = (e) => {
         // prevent the form from refreshing the whole page
@@ -31,19 +33,28 @@ function Register() {
                 mobile,
                 name,
                 address,
+
             },
         };
 
+        if (mobile.trim().length !== 10) {
+            alert("Please enter a valid phone number");
+            mobileCheck.innerText = "Please enter a valid phone number";
+        } else {
+            axios(configuration)
+                .then((result) => {
+                    setRegister(true);
+                    window.location.pathname = "/"
+                })
+                .catch((error) => {
+                    error = new Error();
+                });
+        }
+
         // make the API call
-        axios(configuration)
-            .then((result) => {
-                setRegister(true);
-                window.location.href = "/"
-            })
-            .catch((error) => {
-                error = new Error();
-            });
+
     };
+
 
     return (
         <>
@@ -58,11 +69,12 @@ function Register() {
                             <input placeholder="Enter your mail address" name="email" type="email" onChange={(e) => setEmail(e.target.value)} required></input>
                             <h4>Mobile</h4>
                             <input placeholder="Enter your mobile number" type="text" name="mobile" onChange={(e) => setMobile(e.target.value)} required></input>
+                            <span id="valid-mobile"></span>
                             <h4>Password</h4>
                             <input placeholder="Enter password" type="password" name="password" onChange={(e) => setPassword(e.target.value)} required></input>
                             <h4>Address</h4>
                             <textarea placeholder="Enter your Address" type="Address" name="Address" onChange={(e) => setAddress(e.target.value)} required></textarea>
-                            <Link to="/"><button className="btn1" onClick={(e) => handleSubmit(e)}>Create Account</button></Link>
+                            <Link to="/"><button className="btn1" id="register-btn" onClick={handleSubmit}>Create Account</button></Link>
                             {register ? (
                                 <p className="text-success">You Are Registered Successfully</p>
                             ) : (

@@ -12,7 +12,7 @@ function Product2() {
     const [zipcode, setZipcode] = useState("");
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    
+
 
     useEffect(() => {
         const selectedProduct = productsData.find(p => p.id === parseInt(id));
@@ -71,6 +71,13 @@ function Product2() {
         }
 
     }
+
+    function buynow() {
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product,
+        })
+    }
     return (
         <>
             <div className="product1">
@@ -101,7 +108,7 @@ function Product2() {
                             <div className="buttons">
                                 {cart.some((p) => p.id === product.id) ? (
                                     <button
-                                        className="btn1"
+                                        className="btn2"
                                         onClick={() =>
                                             dispatch({
                                                 type: "REMOVE_FROM_CART",
@@ -119,6 +126,24 @@ function Product2() {
                                         Add to cart
                                     </button>
                                 )}
+                                {cart.some((p) => p.id === product.id) ? (
+
+                                    <Link to="/cart">
+                                        <button
+                                            className="btn1"
+                                        >
+                                            Go to Cart
+                                        </button>
+                                    </Link>
+                                ) : (
+                                    <button
+                                        className="btn2"
+                                        onClick={buynow}
+                                    >
+                                        Buy Now
+                                    </button>
+                                )
+                                }
                             </div>
                             <div className="stock">
                                 <h6>In Stock</h6>

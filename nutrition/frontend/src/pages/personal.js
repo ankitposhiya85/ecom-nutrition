@@ -27,7 +27,7 @@ function Personal() {
         // make the API call
         axios(configuration)
             .then((result) => {
-                // assign the message in our result to the message we initialized above
+                
             })
             .catch((error) => {
                 error = new Error();
@@ -41,6 +41,7 @@ function Personal() {
         // redirect user to the landing page
         window.location.href = "/";
     }
+
     return (
         <>
             <div className="cart-product">

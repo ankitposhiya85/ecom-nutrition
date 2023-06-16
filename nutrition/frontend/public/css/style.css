@@ -783,6 +783,7 @@ textarea {
 
 .total-txt {
     padding: 30px 40px;
+    text-align: center;
 }
 
 .btn5 {
@@ -1136,5 +1137,15 @@ textarea {
 
 .quntity input {
     width: 100px;
-    border: none;
+    border: 0.5px solid #333333;
+    padding: 5px 10px;
+    outline: none;
+}
+
+#valid-mobile {
+    color: red;
+}
+
+#delivery {
+    display: none;
 }
