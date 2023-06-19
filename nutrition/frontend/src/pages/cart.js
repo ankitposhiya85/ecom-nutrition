@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { CartState } from "./contex";
 
 
+
+
 function Cart() {
     useEffect(() => {
         document.getElementById("header").classList.remove("login-nav");
@@ -19,6 +21,10 @@ function Cart() {
         setTotal(
             cart.reduce((acc, curr) => acc + Number(curr.discountedprice) * curr.qty, 0)
         );
+    }, [cart]);
+    
+    useEffect(() => {
+        localStorage.setItem("cartData", JSON.stringify(cart))
     }, [cart]);
 
     function checkout() {
@@ -69,7 +75,7 @@ function Cart() {
                                                                 <option value="8">8</option>
                                                                 <option value="9">9</option>
                                                             </select>
-                                                       
+
                                                             {/* <div className="quntity">
                                                                 <input type="number" placeholder="1" onChange={(e) =>
                                                                     dispatch({

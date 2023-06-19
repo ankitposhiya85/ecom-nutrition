@@ -35,17 +35,19 @@ function Product36() {
 
     function checkPincode() {
         var res = document.getElementById("res");
+        var delivery = document.getElementById("delivery");
 
         if (pincode.includes(parseInt(zipcode))) {
             res.textContent = "Available";
             res.classList.add("available");
             res.classList.remove("not-available");
+            delivery.style.display = "block";
         } else if (zipcode.trim().length === 0) {
-            res.textContent = "Plese enter the Pincode";
+            res.textContent = "Please enter the Pincode";
             res.classList.add("not-available");
             res.classList.remove("available");
         } else if (zipcode.trim().length !== 6) {
-            res.textContent = "Pincode must be of six digits";
+            res.textContent = "Please enter a valid pincode";
             res.classList.add("not-available");
             res.classList.remove("available");
         } else {

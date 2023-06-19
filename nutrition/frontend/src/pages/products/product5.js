@@ -35,17 +35,19 @@ function Product5() {
 
     function checkPincode() {
         var res = document.getElementById("res");
+        var delivery = document.getElementById("delivery")
 
         if (pincode.includes(parseInt(zipcode))) {
             res.textContent = "Available";
             res.classList.add("available");
             res.classList.remove("not-available");
+            delivery.style.display = "block";
         } else if (zipcode.trim().length === 0) {
-            res.textContent = "Plese enter the Pincode";
+            res.textContent = "Please enter the Pincode";
             res.classList.add("not-available");
             res.classList.remove("available");
         } else if (zipcode.trim().length !== 6) {
-            res.textContent = "Pincode must be of six digits";
+            res.textContent = "Please enter a valid pincode";
             res.classList.add("not-available");
             res.classList.remove("available");
         } else {
@@ -54,6 +56,7 @@ function Product5() {
             res.classList.remove("available");
         }
     }
+
 
     function addtocart() {
         if (zipcode.trim().length === 0) {
@@ -152,6 +155,9 @@ function Product5() {
                                 <h5>Pincode:-</h5>
                                 <input type="text" placeholder="pincode" onChange={handlechange}></input>
                                 <button onClick={checkPincode}>Check</button>
+                            </div>
+                            <div className="d-flex gap-5">
+                                <span id="res"></span><span id="delivery">Deliverd in 6 Days</span>
                             </div>
                             <div className="social2">
                                 <h3>Share :</h3>

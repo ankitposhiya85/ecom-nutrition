@@ -15,6 +15,10 @@ function Productdetail() {
         dispatch,
     } = CartState();
 
+    useEffect(() => {
+        localStorage.setItem("cartData", JSON.stringify(cart));
+    }, [cart]);
+
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [zipcode, setZipcode] = useState("");
@@ -35,7 +39,7 @@ function Productdetail() {
 
     function checkPincode() {
         var res = document.getElementById("res");
-        var delivery = document.getElementById("delivery")
+        var delivery = document.getElementById("delivery");
 
         if (pincode.includes(parseInt(zipcode))) {
             res.textContent = "Available";

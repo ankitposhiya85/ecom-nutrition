@@ -51,9 +51,9 @@ function App() {
               <Route path="/personal1" element={<Personal1 />}></Route>
               <Route path="/personal" element=
                 {
-                
-                    <Personal />
                   
+                    <Personal />
+                
                 }>
               </Route>
               <Route path="/changepassword" element={<Changepassword />}></Route>

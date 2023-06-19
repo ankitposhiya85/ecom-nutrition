@@ -35,7 +35,7 @@ function Login() {
         axios(configuration)
             .then((result) => {
                 // set the cookie
-                cookies.set("TOKEN", result.data.token, {
+                localStorage.setItem("TOKEN", result.data.token, {
                     path: "/",
                 });
                 // redirect user to the home page

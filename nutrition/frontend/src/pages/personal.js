@@ -26,7 +26,7 @@ function Personal() {
 
         // make the API call
         axios(configuration)
-            .then((result) => {
+            .then(() => {
                 
             })
             .catch((error) => {
@@ -37,7 +37,7 @@ function Personal() {
     // logout
     const logout = () => {
         // destroy the cookie
-        cookies.remove("TOKEN", { path: "/" });
+        localStorage.removeItem("TOKEN", token);
         // redirect user to the landing page
         window.location.href = "/";
     }
